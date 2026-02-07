@@ -1,6 +1,5 @@
 # Date/Time: 2026-02-07 / 22:00 (Moscow)
 # For more info - visit: www.github.com/rrr-a-w7w/sub.null
-vless://6416708c-eaa5-4ec5-b652-a2db2feab875@81.200.151.14:443?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=chrome&sni=m.vk.com&pbk=FkmYFobwxLMLEktYXywmjthuEYCZggITsxwPNasTKUg&sid=4a3ad88ff867a295#%F0%9F%87%B7%F0%9F%87%BARussia%20%5BSNI-RU%5D%20m.vk.com
 {
   "api" : {
     "listen" : "127.0.0.1:10085",
@@ -165,6 +164,348 @@ vless://6416708c-eaa5-4ec5-b652-a2db2feab875@81.200.151.14:443?flow=xtls-rprx-vi
     }
   },
   "remarks" : "🇫🇮Казах",
+  "routing" : {
+    "domainStrategy" : "AsIs",
+    "rules" : [
+      {
+        "inboundTag" : [
+          "socks-direct"
+        ],
+        "outboundTag" : "direct"
+      }
+    ]
+  }
+}
+{
+  "api" : {
+    "listen" : "127.0.0.1:10085",
+    "services" : [
+      "HandlerService"
+    ],
+    "tag" : "api"
+  },
+  "dns" : {
+    "queryStrategy" : "UseIPv4"
+  },
+  "inbounds" : [
+    {
+      "listen" : "127.0.0.1",
+      "port" : 10808,
+      "protocol" : "socks",
+      "settings" : {
+        "auth" : "noauth",
+        "udp" : true
+      },
+      "sniffing" : {
+        "destOverride" : [
+          "quic",
+          "http",
+          "tls"
+        ],
+        "enabled" : true,
+        "excludedDomains" : [
+
+        ],
+        "metadataOnly" : false,
+        "routeOnly" : true
+      },
+      "tag" : "socks-in"
+    },
+    {
+      "listen" : "127.0.0.1",
+      "port" : 10809,
+      "protocol" : "http",
+      "settings" : {
+        "auth" : "noauth",
+        "udp" : true
+      },
+      "sniffing" : {
+        "destOverride" : [
+          "quic",
+          "http",
+          "tls"
+        ],
+        "enabled" : true,
+        "excludedDomains" : [
+
+        ],
+        "metadataOnly" : false,
+        "routeOnly" : true
+      },
+      "tag" : "http"
+    },
+    {
+      "listen" : "127.0.0.1",
+      "port" : 10820,
+      "protocol" : "socks",
+      "settings" : {
+        "auth" : "noauth",
+        "udp" : true
+      },
+      "sniffing" : {
+        "destOverride" : [
+          "quic",
+          "http",
+          "tls"
+        ],
+        "enabled" : true,
+        "excludedDomains" : [
+
+        ],
+        "metadataOnly" : false,
+        "routeOnly" : true
+      },
+      "tag" : "socks-direct"
+    }
+  ],
+  "log" : {
+    "access" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/12DA2943-1589-475F-B072-0D408C812F11\/Library\/Application Support\/Xray\/logs\/access",
+    "dnsLog" : true,
+    "error" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/12DA2943-1589-475F-B072-0D408C812F11\/Library\/Application Support\/Xray\/logs\/connectionLogs\/2026-02-07_18-28-52.log",
+    "loglevel" : "Warning"
+  },
+  "outbounds" : [
+    {
+      "protocol" : "vless",
+      "settings" : {
+        "testpre" : 5,
+        "testseed" : [
+          580,
+          310,
+          712,
+          92
+        ],
+        "vnext" : [
+          {
+            "address" : "pq-Albania1.09vpn.com",
+            "port" : 80,
+            "users" : [
+              {
+                "encryption" : "none",
+                "id" : "8910cbb3-33b1-4266-a243-ac780ac63394",
+                "level" : 8,
+                "security" : "auto"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings" : {
+        "network" : "ws",
+        "security" : "none",
+        "wsSettings" : {
+          "headers" : {
+
+          },
+          "path" : "\/vless\/"
+        }
+      },
+      "tag" : "proxy"
+    },
+    {
+      "protocol" : "freedom",
+      "tag" : "direct"
+    },
+    {
+      "protocol" : "blackhole",
+      "tag" : "block"
+    }
+  ],
+  "policy" : {
+    "levels" : {
+      "8" : {
+        "bufferSize" : 3,
+        "connIdle" : 300,
+        "downlinkOnly" : 4,
+        "handshake" : 3,
+        "statsUserDownlink" : false,
+        "statsUserOnline" : false,
+        "statsUserUplink" : false,
+        "uplinkOnly" : 2
+      }
+    },
+    "system" : {
+      "statsInboundDownlink" : false,
+      "statsInboundUplink" : false,
+      "statsOutboundDownlink" : false,
+      "statsOutboundUplink" : false
+    }
+  },
+  "remarks" : "🇦🇱Albania хз",
+  "routing" : {
+    "domainStrategy" : "AsIs",
+    "rules" : [
+      {
+        "inboundTag" : [
+          "socks-direct"
+        ],
+        "outboundTag" : "direct"
+      }
+    ]
+  }
+}
+{
+  "api" : {
+    "listen" : "127.0.0.1:10085",
+    "services" : [
+      "HandlerService"
+    ],
+    "tag" : "api"
+  },
+  "dns" : {
+    "queryStrategy" : "UseIPv4"
+  },
+  "inbounds" : [
+    {
+      "listen" : "127.0.0.1",
+      "port" : 10808,
+      "protocol" : "socks",
+      "settings" : {
+        "auth" : "noauth",
+        "udp" : true
+      },
+      "sniffing" : {
+        "destOverride" : [
+          "tls",
+          "http",
+          "quic"
+        ],
+        "enabled" : true,
+        "excludedDomains" : [
+
+        ],
+        "metadataOnly" : false,
+        "routeOnly" : true
+      },
+      "tag" : "socks-in"
+    },
+    {
+      "listen" : "127.0.0.1",
+      "port" : 10809,
+      "protocol" : "http",
+      "settings" : {
+        "auth" : "noauth",
+        "udp" : true
+      },
+      "sniffing" : {
+        "destOverride" : [
+          "tls",
+          "http",
+          "quic"
+        ],
+        "enabled" : true,
+        "excludedDomains" : [
+
+        ],
+        "metadataOnly" : false,
+        "routeOnly" : true
+      },
+      "tag" : "http"
+    },
+    {
+      "listen" : "127.0.0.1",
+      "port" : 10820,
+      "protocol" : "socks",
+      "settings" : {
+        "auth" : "noauth",
+        "udp" : true
+      },
+      "sniffing" : {
+        "destOverride" : [
+          "tls",
+          "http",
+          "quic"
+        ],
+        "enabled" : true,
+        "excludedDomains" : [
+
+        ],
+        "metadataOnly" : false,
+        "routeOnly" : true
+      },
+      "tag" : "socks-direct"
+    }
+  ],
+  "log" : {
+    "access" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/12DA2943-1589-475F-B072-0D408C812F11\/Library\/Application Support\/Xray\/logs\/access",
+    "dnsLog" : true,
+    "error" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/12DA2943-1589-475F-B072-0D408C812F11\/Library\/Application Support\/Xray\/logs\/connectionLogs\/2026-02-07_18-29-13.log",
+    "loglevel" : "Warning"
+  },
+  "outbounds" : [
+    {
+      "protocol" : "vless",
+      "settings" : {
+        "testpre" : 5,
+        "testseed" : [
+          580,
+          310,
+          712,
+          92
+        ],
+        "vnext" : [
+          {
+            "address" : "84.201.20.217",
+            "port" : 443,
+            "users" : [
+              {
+                "encryption" : "none",
+                "id" : "6202b230-417c-4d8e-b624-0f71afa9c75d",
+                "level" : 8,
+                "security" : "auto"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings" : {
+        "network" : "ws",
+        "security" : "tls",
+        "tlsSettings" : {
+          "allowInsecure" : false,
+          "fingerprint" : "chrome",
+          "rejectUnknownSni" : false,
+          "serverName" : "sni.111000.indevs.in"
+        },
+        "wsSettings" : {
+          "headers" : {
+            "Host" : "sni.111000.indevs.in"
+          },
+          "path" : "\/?ed=2560"
+        }
+      },
+      "tag" : "proxy"
+    },
+    {
+      "protocol" : "freedom",
+      "tag" : "direct"
+    },
+    {
+      "protocol" : "blackhole",
+      "tag" : "block"
+    }
+  ],
+  "policy" : {
+    "levels" : {
+      "8" : {
+        "bufferSize" : 3,
+        "connIdle" : 300,
+        "downlinkOnly" : 4,
+        "handshake" : 3,
+        "statsUserDownlink" : false,
+        "statsUserOnline" : false,
+        "statsUserUplink" : false,
+        "uplinkOnly" : 2
+      }
+    },
+    "system" : {
+      "statsInboundDownlink" : false,
+      "statsInboundUplink" : false,
+      "statsOutboundDownlink" : false,
+      "statsOutboundUplink" : false
+    }
+  },
+  "remarks" : "🇨🇦Canada йоу",
   "routing" : {
     "domainStrategy" : "AsIs",
     "rules" : [
